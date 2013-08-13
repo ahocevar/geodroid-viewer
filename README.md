@@ -1,7 +1,7 @@
 geodroid-viewer
 ===============
 
-An viewer for maps served by https://github.com/jdeolive/geodroid/
+An viewer for maps served by https://github.com/jdeolive/geodroid-server/
 
 Copy the contents of this folder to `/sdcard/www/` on your Android device, then navigate e.g. to [http://localhost:8000/www/?layers=ne:tiles&center=48,16&zoom=4](http://localhost:8000/www/?layers=ne:tiles&features=ne:populated_places&center=48,16&zoom=4).
 
