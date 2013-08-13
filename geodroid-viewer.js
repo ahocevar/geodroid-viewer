@@ -16,7 +16,6 @@
   var layers = [];
   for (var i = 0, ii = params.layers.length; i < ii; ++i) {
     var layer = params.layers[i].replace(':', '/').split('.');
-    // TODO: Implement features layers
     layers.push(new ol.layer.TileLayer({
       source: new ol.source.ImageTileSource({
         attributions: [new ol.Attribution('OpenLayers - GeoDroid')],
@@ -30,6 +29,29 @@
             (layer.length > 1 ? layer[1] : 'png'))
       })
     }));
+  }
+  
+  if (params.features) {
+    params.features = params.features.split(',');
+    for (var i = 0, ii = params.features.length; i < ii; ++i) {
+      var feature = params.features[i].replace(':', '/');
+      layers.push(new ol.layer.Vector({
+        source: new ol.source.Vector({
+          parser: new ol.parser.GeoJSON(),
+          url: '/features/' + feature + '?bbox=-180,-90,180,90'
+        }),
+        style: new ol.style.Style({rules: [
+          new ol.style.Rule({
+            symbolizers: [
+              new ol.style.Shape({
+                size: 10,
+                fillColor: '#013'
+              }),
+            ]
+          })
+        ]})
+      }));
+    }
   }
 
   if (params.center) {
