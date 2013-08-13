@@ -3,7 +3,7 @@ geodroid-viewer
 
 An viewer for maps served by https://github.com/jdeolive/geodroid/
 
-Copy the contents of this folder to `/sdcard/www/` on your Android device, then navigate e.g. to http://localhost:8000/?layers=ne:tiles&center=48,16&zoom=4.
+Copy the contents of this folder to `/sdcard/www/` on your Android device, then navigate e.g. to [http://localhost:8000/www/?layers=ne:tiles&center=48,16&zoom=4](http://localhost:8000/www/?layers=ne:tiles&center=48,16&zoom=4).
 
 The `layers` parameter is mandatory, `center` and `zoom` are optional.
 
